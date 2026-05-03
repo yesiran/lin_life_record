@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>酒店休息 · 美国旅行</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  background: #faf8f5;
+  color: #2c2c2c;
+  line-height: 1.9;
+  padding: 60px 20px 80px;
+}
+.wrap { max-width: 720px; margin: 0 auto; }
+.crumbs {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+.crumbs a { color: #888; text-decoration: none; }
+.crumbs a:hover { color: #555; }
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+.meta {
+  font-size: 13px;
+  color: #999;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+.narrative {
+  font-size: 16px;
+  line-height: 2.0;
+  color: #333;
+  text-indent: 2em;
+  margin-bottom: 56px;
+  padding: 0 4px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (min-width: 720px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+.photo {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  cursor: zoom-in;
+  display: flex;
+  flex-direction: column;
+}
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
+}
+.photo:hover img { transform: scale(1.02); }
+.photo .caption {
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #555;
+  font-family: "PingFang SC", "Hiragino Sans GB", sans-serif;
+}
+.photo .caption .t {
+  font-weight: 600;
+  color: #2c2c2c;
+  display: block;
+  margin-bottom: 2px;
+}
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  padding: 20px;
+}
+.lightbox.show { display: flex; }
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 8px 60px rgba(0,0,0,0.5);
+}
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 12px;
+  color: #ccc;
+  letter-spacing: 2px;
+}
+.footer a { color: #999; text-decoration: none; }
+.footer a:hover { color: #555; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumbs">
+    <a href="../../">一叶琳旅程</a>
+    &nbsp;&middot;&nbsp;
+    <a href="../">美国旅行</a>
+  </div>
+  <h1>酒店休息</h1>
+  <div class="meta">2026-05-03  &middot;  共 1 张</div>
+  <div class="narrative">2026年5月3日，这是一个我在美国度过的寻常早晨，却又带着一丝不寻常的惬意。阳光透过酒店房间的木格窗，没有丝毫阻拦地倾泻进来，将我那张睡得有些凌乱的床铺染上了一层金边。我没有急着起身，只是任由自己陷在柔软的被褥里，感受着这片刻的温暖与宁静。窗外似乎有鸟鸣</div>
+  <div class="gallery">
+    <figure class="photo"><img src="images/2026-05-03-%E9%85%92%E5%BA%97%E4%BC%91%E6%81%AF-01.jpg" alt="慵懒时光" loading="lazy"><figcaption class="caption"><span class="t">慵懒时光</span>阳光透过木格窗，洒在凌乱的床铺上，旅人尽享闲适。</figcaption></figure>
+  </div>
+  <div class="footer">
+    <a href="../">← 返回 美国旅行</a>
+  </div>
+</div>
+<div class="lightbox"><img src="" alt=""></div>
+<script>
+(function(){
+  var box = document.querySelector('.lightbox');
+  var img = box.querySelector('img');
+  document.querySelectorAll('.photo img').forEach(function(el){
+    el.addEventListener('click', function(){
+      img.src = el.src;
+      box.classList.add('show');
+    });
+  });
+  box.addEventListener('click', function(){ box.classList.remove('show'); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') box.classList.remove('show');
+  });
+})();
+</script>
+</body>
+</html>
