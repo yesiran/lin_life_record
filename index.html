@@ -7,16 +7,77 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: "PingFang SC", "Hiragino Sans GB", sans-serif;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   background: #faf8f5;
   color: #333;
   padding: 60px 20px;
 }
 .container { max-width: 600px; margin: 0 auto; }
-h1 { font-size: 28px; font-weight: 300; letter-spacing: 4px; text-align: center; margin-bottom: 12px; }
-.subtitle { font-size: 13px; color: #999; text-align: center; margin-bottom: 48px; letter-spacing: 2px; }
+h1 {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.subtitle {
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+  margin-bottom: 48px;
+  letter-spacing: 2px;
+}
 .trips { display: flex; flex-direction: column; gap: 16px; }
-.placeholder { text-align: center; color: #ccc; padding: 60px 0; font-size: 14px; }
+a.trip-group {
+  display: block;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 28px;
+  border: 1.5px solid #c4a97d;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(124,154,106,0.10);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+a.trip-group:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(124,154,106,0.18);
+}
+a.trip-group::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 16px; bottom: 16px;
+  width: 4px;
+  background: linear-gradient(180deg, #c4a97d, #8b6f47);
+  border-radius: 0 3px 3px 0;
+}
+.trip-group-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.72rem;
+  color: #8b6f47;
+  background: #f8f0e3;
+  border: 1px solid #e0d5c7;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.1em;
+}
+.trip-group-icon { font-size: 28px; display: block; margin-bottom: 6px; }
+.trip-group-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: #2c1f14;
+  letter-spacing: 1.5px;
+  padding-right: 60px;
+}
+.trip-group-meta {
+  font-size: 12px;
+  color: #9a8b78;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
 .footer { text-align: center; margin-top: 48px; font-size: 12px; color: #ccc; }
 </style>
 </head>
@@ -33,7 +94,6 @@ h1 { font-size: 28px; font-weight: 300; letter-spacing: 4px; text-align: center;
         <div class="trip-group-meta">2026-05-03 · 1 条记录</div>
       </a>
       <!-- life-record:trips-managed:end -->
-    <div class="placeholder">还没有记录·开始 /rec start 即可</div>
   </div>
   <p class="footer">琳的生活记录</p>
 </div>
